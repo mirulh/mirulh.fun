@@ -29,6 +29,7 @@ wss.on('connection', function connection(ws) {
   }
 
   ws.on('close', function close() {
+    wss.broadcast(`Current visitors: ${numClients}`);
     console.log('A client has disconnected');
   });
 });
